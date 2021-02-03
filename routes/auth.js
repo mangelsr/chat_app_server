@@ -23,6 +23,6 @@ router.post('/login', [
     fieldValidation,
 ], login);
 
-router.post('/renew', [validateJWT], renewToken);
+router.get('/renew', [validateJWT], renewToken);
 
 module.exports = router;
