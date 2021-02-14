@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 require('dotenv').config();
 
 // DB Config
@@ -18,10 +17,6 @@ module.exports.io = require('socket.io')(server);
 require('./sockets/socket');
 
 const serverPort = process.env.PORT;
-
-// Public Path
-const publicPath = path.resolve(__dirname, 'public');
-app.use(express.static(publicPath));
 
 // Backend Routes
 app.use('/api/auth', require('./routes/auth'));
